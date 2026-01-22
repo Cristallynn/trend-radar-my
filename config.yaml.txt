@@ -1,0 +1,167 @@
+# TradeRadar 配置文件 - 营商环境报告素材收集
+version: 1.0
+name: 营商环境新闻聚合器
+description: 自动收集指定来源的营商环境、产业经济相关新闻
+
+# 数据源配置
+sources:
+  # 微信公众号
+  - type: wechat
+    name: 上观新闻
+    enabled: true
+  - type: wechat
+    name: 21世纪经济报道
+    enabled: true
+  - type: wechat
+    name: 每日经济新闻
+    enabled: true
+  - type: wechat
+    name: 第一财经
+    enabled: true
+  - type: wechat
+    name: 国际商报
+    enabled: true
+  - type: wechat
+    name: 决策杂志
+    enabled: true
+  - type: wechat
+    name: 观察者网
+    enabled: true
+  - type: wechat
+    name: 识局insight
+    enabled: true
+  - type: wechat
+    name: 中国经营报
+    enabled: true
+  - type: wechat
+    name: 政知见
+    enabled: true
+  - type: wechat
+    name: 都市快报
+    enabled: true
+  - type: wechat
+    name: 中新经纬
+    enabled: true
+  - type: wechat
+    name: 蓝鲸新闻
+    enabled: true
+  - type: wechat
+    name: 财新
+    enabled: true
+  - type: wechat
+    name: 伴公汀
+    enabled: true
+  - type: wechat
+    name: 经济观察报
+    enabled: true
+  - type: wechat
+    name: 刘晓博说财经
+    enabled: true
+  - type: wechat
+    name: 涌金楼
+    enabled: true
+  - type: wechat
+    name: 华尔街见闻
+    enabled: true
+  - type: wechat
+    name: Mike外贸说
+    enabled: true
+  - type: wechat
+    name: 智谷趋势
+    enabled: true
+  - type: wechat
+    name: 熊园观察
+    enabled: true
+  - type: wechat
+    name: 合肥电商行业参考
+    enabled: true
+  - type: wechat
+    name: 读研新解
+    enabled: true
+  - type: wechat
+    name: 艺术新闻中文版
+    enabled: true
+  - type: wechat
+    name: TOP行业报告
+    enabled: true
+  - type: wechat
+    name: 本土零售观察
+    enabled: true
+  - type: wechat
+    name: 中服圈
+    enabled: true
+  - type: wechat
+    name: 浙江贸促
+    enabled: true
+  - type: wechat
+    name: 刀法研究所
+    enabled: true
+  - type: wechat
+    name: 36氪
+    enabled: true
+  - type: wechat
+    name: 城市进化论
+    enabled: true
+  - type: wechat
+    name: Jing daily精奢商业
+    enabled: true
+  - type: wechat
+    name: 快消品渠道管理
+    enabled: true
+  - type: wechat
+    name: 梅花网
+    enabled: true
+  - type: wechat
+    name: SocialBeta
+    enabled: true
+  - type: wechat
+    name: VWD国际时尚特讯
+    enabled: true
+
+  # APP 来源
+  - type: app
+    name: 解放日报APP
+    enabled: true
+  - type: app
+    name: 每日经济新闻APP
+    enabled: true
+  - type: app
+    name: 21世纪经济报道APP
+    enabled: true
+  - type: app
+    name: 第一财经APP
+    enabled: true
+  - type: app
+    name: 北京日报APP
+    enabled: true
+  - type: app
+    name: 全球纺织网
+    url: https://www.tnc.com.cn/
+    enabled: true
+
+# 关键词过滤
+keywords:
+  - 营商环境
+  - 政策扶持
+  - 产业动态
+  - 经济数据
+  - 外贸趋势
+  - 零售行业
+  - 时尚产业
+  - 区域经济
+  - 民营经济
+  - 市场准入
+  - 减税降费
+  - 招商引资
+
+# 任务调度
+schedule:
+  interval: daily
+  time: "08:00"  # 每天早上8点自动收集
+  timezone: "Asia/Shanghai"
+
+# 输出设置
+output:
+  format: json
+  path: "./collected_news.json"
+  auto_push: true  # 自动推送到GitHub仓库
